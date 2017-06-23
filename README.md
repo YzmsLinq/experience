@@ -16,4 +16,17 @@
 　　　　python createdb.py runserver <br> 
 二、启动服务器。请输入以下命令：<br>
 　python webrobot.py runserver <br>
-三、启动对话。请在浏览器中输入http://127.0.0.1
+三、启动对话。请在浏览器中输入http://127.0.0.1<br>
+四、关于目录结构说明：<br>
+　　\webrobot<br>
+  　　｜\aiml　　AIML库目录<br>
+  　　｜\another　　其它各类程序目录<br>
+  　　｜\chinese　　中文语料库目录<br>
+  　　｜\db　　数据库目录<br>
+  　　｜\english　　英文语料库目录<br>
+  　　｜\packages　　所需库目录<br>
+  　　｜\standard　　标准语料库目录<br>
+  　　｜\static　　静态图标目录<br>
+  　　｜\templates　　网页模板文件目录<br>
+     　
+
