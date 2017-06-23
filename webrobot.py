@@ -31,7 +31,7 @@ app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
 manager = Manager(app)
 #server = Server(host="0.0.0.0", port=80, use_debugger=True)
-server = Server(host="0.0.0.0", port=8051)
+server = Server(host="0.0.0.0", port=80)
 manager.add_command("runserver", server)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
