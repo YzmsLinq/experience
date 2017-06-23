@@ -26,6 +26,7 @@ app.config['SECRET_KEY'] = '<replace with a secret key>'
 app.config['SQLALCHEMY_DATABASE_URI'] = \
     'sqlite:///' + os.path.join(basedir, 'db\\tlkDB.db')
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 #app.debug = True
 #toolbar = DebugToolbarExtension(app)
 
