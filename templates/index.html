@@ -22,7 +22,7 @@ function sc(){
 </div>
 
 <div class="page-header">
-    <h1>机器人：{% if name %}{{ name }}{% else %}请说话...{% endif %}</h1>
+    <h1><img src="static/robot.png" />：{% if name %}{{ name }}{% else %}请说话...{% endif %}</h1>
 </div>
 {{ wtf.quick_form(form) }}
 {% endblock %}

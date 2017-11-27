@@ -49,7 +49,7 @@ class CtlkTxt(db.Model):
 
 
 class NameForm(FlaskForm):                 
-    name = StringField('请发开始交谈：', validators=[Required()])
+    name = StringField('请开始交谈：', validators=[Required()])
     submit = SubmitField('提交')
 #    submit1 = SubmitField('清除')
 
