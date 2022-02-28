@@ -27,5 +27,6 @@
   　　｜\standard　　标准语料库目录<br>
   　　｜\static　　静态图标目录<br>
   　　｜\templates　　网页模板文件目录<br>
+      |\dll　　windows下的sqlite驱动 
      　
 
