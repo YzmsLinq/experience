@@ -2,12 +2,11 @@
 import os
 from flask import Flask, render_template, session, redirect, url_for, flash
 #from flask_debugtoolbar import DebugToolbarExtension
-from flask_script import Server, Manager
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
-from wtforms.validators import Required
+from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 
 import sys
@@ -25,16 +24,12 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '<replace with a secret key>'
 app.config['SQLALCHEMY_DATABASE_URI'] = \
-    'sqlite:///' + os.path.join(basedir, 'db\\tlkDB.db')
+    'sqlite:///' + os.path.join(basedir, 'db/tlkDB.db')
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 #app.debug = True
 #toolbar = DebugToolbarExtension(app)
 
-manager = Manager(app)
-#server = Server(host="0.0.0.0", port=80, use_debugger=True)
-server = Server(host="0.0.0.0", port=80)
-manager.add_command("runserver", server)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 db = SQLAlchemy(app)
@@ -50,7 +45,7 @@ class CtlkTxt(db.Model):
 
 
 class NameForm(FlaskForm):                 
-    name = StringField('请开始交谈：', validators=[Required()])
+    name = StringField('请开始交谈：', validators=[DataRequired()])
     submit = SubmitField('提交')
 #    submit1 = SubmitField('清除')
 
@@ -107,6 +102,4 @@ def index():
 
 
 if __name__ == '__main__':
-    manager.run()
-#    app.run()
-#    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8089)
