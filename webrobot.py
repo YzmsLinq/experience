@@ -4,6 +4,7 @@ from flask import Flask, render_template, session, redirect, url_for, flash
 #from flask_debugtoolbar import DebugToolbarExtension
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
+#from flask_script import Server, Manager #使用已修正的flask_script库 
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
@@ -30,6 +31,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 #app.debug = True
 #toolbar = DebugToolbarExtension(app)
 
+#manager = Manager(app)
+#server = Server(host="0.0.0.0", port=80)
+#manager.add_command("runserver", server)   #使用已修正的flask_script库
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 db = SQLAlchemy(app)
@@ -103,3 +107,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8089)
+    #manager.run()  #使用已修正的flask_script库
