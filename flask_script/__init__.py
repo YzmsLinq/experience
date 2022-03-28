@@ -6,9 +6,9 @@ import re
 import sys
 import types
 import warnings
-import six
 from gettext import gettext as _
 from collections import OrderedDict
+from .six import text_type
 
 import argparse
 
@@ -409,7 +409,7 @@ class Manager(object):
             self._commands.update(commands)
 
         # Make sure all of this is Unicode
-        argv = list(six.text_type(arg) for arg in sys.argv)
+        argv = list(text_type(arg) for arg in sys.argv)
         if default_command is not None and len(argv) == 1:
             argv.append(default_command)
 
